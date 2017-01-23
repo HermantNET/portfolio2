@@ -1,0 +1,77 @@
+.calc {
+  width: 17.4rem;
+  font-family: sans-serif;
+  border-radius: 2%;
+  padding: 1rem;
+  margin: 2rem;
+  background: linear-gradient(to top, rgb(230, 230, 230), rgb(240, 240, 240));
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0.5rem 0.5rem 0.8rem grey;
+}
+
+.calc-display {
+  box-shadow: 0.1rem 0.1rem 0.2rem grey inset;
+  flex: 100rem 2rem 2rem;
+  word-break: break-all;
+  border-radius: 2%;
+  font-family: 'Press Start 2P';
+  margin: 0.1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-color: white;
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.calc-buttons {
+  height: 13.6rem;
+  width: 14rem;
+  display: flex;
+  align-content: flex-start;
+}
+
+.calc-functions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.calc-numbers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calc-button {
+  box-shadow: 0.15rem 0.15rem grey;
+  border-radius: 5%;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.2rem;
+}
+
+.calc-numbers>.calc-button:active, .calc-functions>.calc-button:active {
+  background-color: #A9A9A9;
+}
+
+.calc-button>span {
+  display: block;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.calc-numbers>.calc-button {
+  background-color: #DCDCDC;
+}
+
+.calc-functions>.calc-button {
+  background-color: #C0C0C0;
+}
+
+.calc-button-long {
+  width: 6.4rem;
+}
+
+.calc-button-tall {
+  height: 6.4rem;
+}
