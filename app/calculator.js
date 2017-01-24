@@ -1,19 +1,69 @@
 var Calculator = React.createClass({
   getInitialState: function() {
     return {
-      num1: 0,
-      num2: 0,
-      displayNum: "0"
+      num: 0,
+      operator: '+',
+      displayNum: "0",
+      calculated: false
     };
   },
   clickNum: function(num) {
-    this.setState({
-      displayNum: this.state.displayNum !== "0" ? this.state.displayNum + num : `${num}`
-    });
+    if (this.state.operator === '=') {
+      this.setState({
+        num: 0,
+        displayNum: num.toString(),
+        operator: '+',
+        calculated: false
+      });
+    } else {
+      this.setState({
+        displayNum: this.state.calculated ? num.toString() : this.state.displayNum !== "0" ? this.state.displayNum + num : num.toString(),
+        calculated: false
+      });
+    }
   },
   clickDecimal: function() {
     this.setState({
-      displayNum: this.state.displayNum.includes('.') ? this.state.displayNum : this.state.displayNum + '.'
+      displayNum: this.state.calculated ? "0." : this.state.displayNum.includes('.') ? this.state.displayNum : this.state.displayNum + '.',
+      calculated: false
+    });
+  },
+  clickFunc: function(op) {
+    var n1 = this.state.num,
+        n2 = +this.state.displayNum;
+
+    switch (this.state.operator) {
+      case '+':
+        n1 += n2;
+        break;
+      case '-':
+        n1 -= n2;
+        break;
+      case '*':
+        n1 *= n2;
+        break;
+      case '/':
+        n1 /= n2;
+    }
+
+    this.setState({
+      num: n1,
+      displayNum: n1.toString(),
+      operator: op,
+      calculated: true
+    });
+  },
+  reset: function() {
+    this.setState({
+      num: 0,
+      displayNum: "0",
+      operator: '+',
+      calculated: false
+    });
+  },
+  resetInput: function() {
+    this.setState({
+      displayNum: "0"
     });
   },
   render: function() {
@@ -35,13 +85,13 @@ var Calculator = React.createClass({
             <div className="calc-button" onClick={this.clickDecimal}><span>.</span></div>
           </div>
           <div className="calc-functions">
-            <div className="calc-button"><span>×</span></div>
-            <div className="calc-button"><span>÷</span></div>
-            <div className="calc-button"><span>rem</span></div>
-            <div className="calc-button"><span>CE</span></div>
-            <div className="calc-button"><span>+</span></div>
-            <div className="calc-button"><span>-</span></div>
-            <div className="calc-button calc-button-tall"><span>=</span></div>
+            <div className="calc-button" onClick={this.clickFunc.bind(this, '*')}><span>×</span></div>
+            <div className="calc-button" onClick={this.clickFunc.bind(this, '/')}><span>÷</span></div>
+            <div className="calc-button" onClick={this.resetInput}><span>C</span></div>
+            <div className="calc-button" onClick={this.reset}><span>AC</span></div>
+            <div className="calc-button" onClick={this.clickFunc.bind(this, '+')}><span>+</span></div>
+            <div className="calc-button" onClick={this.clickFunc.bind(this, '-')}><span>-</span></div>
+            <div className="calc-button calc-button-tall" onClick={this.clickFunc.bind(this, '=')}><span>=</span></div>
           </div>
         </div>
       </div>

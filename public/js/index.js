@@ -56,207 +56,257 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	var Calculator = React.createClass({
-	  displayName: "Calculator",
+	  displayName: 'Calculator',
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      num1: 0,
-	      num2: 0,
-	      displayNum: "0"
+	      num: 0,
+	      operator: '+',
+	      displayNum: "0",
+	      calculated: false
 	    };
 	  },
 	  clickNum: function clickNum(num) {
-	    this.setState({
-	      displayNum: this.state.displayNum !== "0" ? this.state.displayNum + num : "" + num
-	    });
+	    if (this.state.operator === '=') {
+	      this.setState({
+	        num: 0,
+	        displayNum: num.toString(),
+	        operator: '+',
+	        calculated: false
+	      });
+	    } else {
+	      this.setState({
+	        displayNum: this.state.calculated ? num.toString() : this.state.displayNum !== "0" ? this.state.displayNum + num : num.toString(),
+	        calculated: false
+	      });
+	    }
 	  },
 	  clickDecimal: function clickDecimal() {
 	    this.setState({
-	      displayNum: this.state.displayNum.includes('.') ? this.state.displayNum : this.state.displayNum + '.'
+	      displayNum: this.state.calculated ? "0." : this.state.displayNum.includes('.') ? this.state.displayNum : this.state.displayNum + '.',
+	      calculated: false
+	    });
+	  },
+	  clickFunc: function clickFunc(op) {
+	    var n1 = this.state.num,
+	        n2 = +this.state.displayNum;
+
+	    switch (this.state.operator) {
+	      case '+':
+	        n1 += n2;
+	        break;
+	      case '-':
+	        n1 -= n2;
+	        break;
+	      case '*':
+	        n1 *= n2;
+	        break;
+	      case '/':
+	        n1 /= n2;
+	    }
+
+	    this.setState({
+	      num: n1,
+	      displayNum: n1.toString(),
+	      operator: op,
+	      calculated: true
+	    });
+	  },
+	  reset: function reset() {
+	    this.setState({
+	      num: 0,
+	      displayNum: "0",
+	      operator: '+',
+	      calculated: false
+	    });
+	  },
+	  resetInput: function resetInput() {
+	    this.setState({
+	      displayNum: "0"
 	    });
 	  },
 	  render: function render() {
 	    return React.createElement(
-	      "div",
-	      { className: "calc" },
+	      'div',
+	      { className: 'calc' },
 	      React.createElement(
-	        "p",
-	        { className: "calc-display" },
+	        'p',
+	        { className: 'calc-display' },
 	        this.state.displayNum
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "calc-buttons" },
+	        'div',
+	        { className: 'calc-buttons' },
 	        React.createElement(
-	          "div",
-	          { className: "calc-numbers" },
+	          'div',
+	          { className: 'calc-numbers' },
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 7) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 7) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "7"
+	              '7'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 8) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 8) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "8"
+	              '8'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 9) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 9) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "9"
+	              '9'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 4) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 4) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "4"
+	              '4'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 5) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 5) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "5"
+	              '5'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 6) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 6) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "6"
+	              '6'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 1) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 1) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "1"
+	              '1'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 2) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 2) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "2"
+	              '2'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickNum.bind(this, 3) },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickNum.bind(this, 3) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "3"
+	              '3'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button calc-button-long", onClick: this.clickNum.bind(this, 0) },
+	            'div',
+	            { className: 'calc-button calc-button-long', onClick: this.clickNum.bind(this, 0) },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "0"
+	              '0'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button", onClick: this.clickDecimal },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickDecimal },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "."
+	              '.'
 	            )
 	          )
 	        ),
 	        React.createElement(
-	          "div",
-	          { className: "calc-functions" },
+	          'div',
+	          { className: 'calc-functions' },
 	          React.createElement(
-	            "div",
-	            { className: "calc-button" },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickFunc.bind(this, '*') },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "\xD7"
+	              '\xD7'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button" },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickFunc.bind(this, '/') },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "\xF7"
+	              '\xF7'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button" },
+	            'div',
+	            { className: 'calc-button', onClick: this.resetInput },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "rem"
+	              'C'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button" },
+	            'div',
+	            { className: 'calc-button', onClick: this.reset },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "CE"
+	              'AC'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button" },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickFunc.bind(this, '+') },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "+"
+	              '+'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button" },
+	            'div',
+	            { className: 'calc-button', onClick: this.clickFunc.bind(this, '-') },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "-"
+	              '-'
 	            )
 	          ),
 	          React.createElement(
-	            "div",
-	            { className: "calc-button calc-button-tall" },
+	            'div',
+	            { className: 'calc-button calc-button-tall', onClick: this.clickFunc.bind(this, '=') },
 	            React.createElement(
-	              "span",
+	              'span',
 	              null,
-	              "="
+	              '='
 	            )
 	          )
 	        )
