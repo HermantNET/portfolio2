@@ -116,19 +116,19 @@ body {
 
 #imagine {
   margin-top: 0;
-  background-image: url(../img/imagine.jpg);
+  background-image: url(/img/imagine.jpg);
   background-size: 120%;
   background-position: 42% 35%;
 }
 
 #build {
-  background-image: url(../img/build.jpg);
+  background-image: url(/img/build.jpg);
   background-size: 140%;
   background-position: left;
 }
 
 #profit {
-  background-image: url(../img/profit.jpg);
+  background-image: url(/img/profit.jpg);
   background-position: center;
 }
 
@@ -216,17 +216,17 @@ body {
   }
 
   #imagine {
-    background-image: url(../img/imagine_medium.jpg);
+    background-image: url(/img/imagine_medium.jpg);
     background-size: 105%;
     background-position: 25% 50%;
   }
 
   #build {
-    background-image: url(../img/build_medium.jpg);
+    background-image: url(/img/build_medium.jpg);
   }
 
   #profit {
-    background-image: url(../img/profit_medium.jpg);
+    background-image: url(/img/profit_medium.jpg);
   }
 }
 
@@ -239,17 +239,17 @@ body {
   }
 
   #imagine {
-    background-image: url(../img/imagine_large.jpg);
+    background-image: url(/img/imagine_large.jpg);
     background-size: 115%;
     background-position: 35% center;
   }
 
   #build {
-    background-image: url(../img/build_large.jpg);
+    background-image: url(/img/build_large.jpg);
   }
 
   #profit {
-    background-image: url(../img/profit_large.jpg);
+    background-image: url(/img/profit_large.jpg);
   }
 }
 
