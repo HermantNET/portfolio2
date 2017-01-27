@@ -50,6 +50,14 @@
 
 	var _calculator2 = _interopRequireDefault(_calculator);
 
+	var _gallery = __webpack_require__(2);
+
+	var _gallery2 = _interopRequireDefault(_gallery);
+
+	var _tictactoe = __webpack_require__(3);
+
+	var _tictactoe2 = _interopRequireDefault(_tictactoe);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
@@ -266,7 +274,7 @@
 	          ),
 	          React.createElement(
 	            'div',
-	            { className: 'calc-button', onClick: this.resetInput },
+	            { className: 'calc-button danger', onClick: this.resetInput },
 	            React.createElement(
 	              'span',
 	              null,
@@ -275,7 +283,7 @@
 	          ),
 	          React.createElement(
 	            'div',
-	            { className: 'calc-button', onClick: this.reset },
+	            { className: 'calc-button danger', onClick: this.reset },
 	            React.createElement(
 	              'span',
 	              null,
@@ -316,6 +324,248 @@
 	});
 
 	ReactDOM.render(React.createElement(Calculator, null), document.getElementById('calculator'));
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var Gallery = React.createClass({
+	  displayName: "Gallery",
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      photos: [{ img: "/img/gal1.jpg", thumb: "/img/gal1_thumb.jpg" }, { img: "/img/gal2.jpg", thumb: "/img/gal2_thumb.jpg" }, { img: "/img/gal3.jpg", thumb: "/img/gal3_thumb.jpg" }],
+	      activePhoto: -1,
+	      add: false
+	    };
+	  },
+	  selectPhoto: function selectPhoto(photoIndex) {
+	    this.setState({
+	      activePhoto: photoIndex
+	    });
+	  },
+	  add: function add() {
+	    this.setState({
+	      add: true
+	    });
+	  },
+	  addImage: function addImage() {
+	    this.setState({
+	      photos: this.url.value.trim() !== "" ? this.state.photos.concat({ img: this.url.value, thumb: this.thumb.value }) : this.state.photos,
+	      add: false
+	    });
+	  },
+	  render: function render() {
+	    var _this = this;
+
+	    var render;
+	    if (this.state.activePhoto > -1) {
+	      render = React.createElement(
+	        "div",
+	        { className: "gallery" },
+	        React.createElement(
+	          "div",
+	          null,
+	          React.createElement("img", { className: "gal-display", src: this.state.photos[this.state.activePhoto].img, onClick: this.selectPhoto.bind(this, -1) }),
+	          React.createElement(
+	            "p",
+	            null,
+	            "Click the image to return to the Gallery."
+	          )
+	        )
+	      );
+	    } else {
+	      render = React.createElement(
+	        "div",
+	        { className: "gallery" },
+	        React.createElement(
+	          "div",
+	          { className: "gal-span" },
+	          React.createElement(
+	            "p",
+	            null,
+	            "Click an image to view."
+	          )
+	        ),
+	        this.state.photos.map(function (photo, index) {
+	          return React.createElement(
+	            "div",
+	            { key: index },
+	            React.createElement("img", { className: "gal-thumb", src: photo.thumb, onClick: _this.selectPhoto.bind(_this, index) })
+	          );
+	        }),
+	        this.state.add ? React.createElement(
+	          "div",
+	          { className: "gal-span" },
+	          React.createElement("input", { type: "text", placeholder: "Image URL", ref: function ref(input) {
+	              _this.url = input;
+	            } }),
+	          React.createElement("input", { type: "text", placeholder: "Image thumbnail URL", ref: function ref(input) {
+	              _this.thumb = input;
+	            } }),
+	          React.createElement(
+	            "button",
+	            { onClick: this.addImage },
+	            "Add Image"
+	          )
+	        ) : React.createElement(
+	          "div",
+	          { className: "gal-span", onClick: this.add },
+	          React.createElement(
+	            "h1",
+	            null,
+	            "+"
+	          ),
+	          React.createElement(
+	            "p",
+	            null,
+	            "Add Image"
+	          )
+	        )
+	      );
+	    }
+	    return render;
+	  }
+	});
+
+	ReactDOM.render(React.createElement(Gallery, null), document.getElementById('gallery'));
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var TicTacToe = React.createClass({
+	  displayName: "TicTacToe",
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      board: [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]],
+	      over: false,
+	      winner: -1
+	    };
+	  },
+	  check: function check() {
+	    var _this = this;
+
+	    var board = this.state.board;
+
+	    for (var row = 0; row < 3; row++) {
+	      if (board[row].every(function (pc) {
+	        return pc === _this.state.board[row][1];
+	      })) {
+	        return board[row][0];
+	      }
+	    }
+
+	    for (var col = 0; col < 3; col++) {
+	      var values = [];
+	      for (var row = 0; row < 3; row++) {
+	        values.push(board[row][col]);
+	      }
+	      if (values.every(function (pc) {
+	        return pc === values[1];
+	      })) {
+	        return values[0];
+	      }
+	    }
+
+	    if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+	      return board[1][1];
+	    } else if (board[2][0] === board[1][1] && board[1][1] === board[0][2]) {
+	      return board[1][1];
+	    } else {
+	      return -1;
+	    }
+	  },
+	  botMove: function botMove() {
+	    var newBoard = this.state.board.slice();
+	    var lastMove = 0;
+	    var indices = [0, 0];
+
+	    while (lastMove > -1) {
+	      if (!newBoard.some(function (row) {
+	        return row.some(function (pc) {
+	          return pc === -1;
+	        });
+	      })) return;
+	      indices = indices.map(function () {
+	        return Math.round(Math.random() * 2);
+	      });
+	      lastMove = newBoard[indices[0]][indices[1]];
+	    }
+
+	    newBoard[indices[0]][indices[1]] = 1;
+
+	    this.setState({
+	      board: newBoard
+	    });
+	  },
+	  makeMove: function makeMove(row, col) {
+	    var newBoard = this.state.board.slice();
+	    if (newBoard[row][col] > -1 || this.state.over) return;
+	    newBoard[row][col] = 0;
+	    this.setState({
+	      board: newBoard
+	    }, function () {
+	      this.botMove();
+	      var res = this.check();
+	      if (res > -1) {
+	        this.setState({
+	          over: true,
+	          winner: res
+	        });
+	      }
+	    });
+	  },
+	  reset: function reset() {
+	    this.setState({
+	      board: [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]],
+	      over: false,
+	      winner: -1
+	    });
+	  },
+	  render: function render() {
+	    var _this2 = this;
+
+	    return React.createElement(
+	      "div",
+	      { className: "t3" },
+	      React.createElement(
+	        "div",
+	        { className: "t3-board" },
+	        this.state.board.map(function (row, i) {
+	          return row.map(function (col, i2) {
+	            return React.createElement("div", {
+	              className: col === -1 ? '' : col === 0 ? 't3-blue' : 't3-red',
+	              key: "" + i + i2,
+	              onClick: _this2.makeMove.bind(_this2, i, i2)
+	            });
+	          });
+	        })
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "t3-span" },
+	        React.createElement(
+	          "p",
+	          null,
+	          this.state.over ? this.state.winner === 0 ? 'WIN' : 'LOSS' : 'TIC TAC TOE'
+	        ),
+	        this.state.over ? React.createElement(
+	          "button",
+	          { onClick: this.reset },
+	          "Play Again?"
+	        ) : null
+	      )
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(TicTacToe, null), document.getElementById('t3'));
 
 /***/ }
 /******/ ]);

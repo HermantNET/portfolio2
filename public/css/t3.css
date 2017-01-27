@@ -1,0 +1,27 @@
+.t3-span {
+  text-align: center;
+}
+
+.t3-board {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 12rem;
+}
+
+.t3-board>div {
+  border-radius: 4%;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.2rem;
+  background-color: lightgrey;
+}
+
+.t3-board>.t3-blue {
+  background-color: blue;
+}
+
+.t3-board>.t3-red {
+  background-color: red;
+}

@@ -87,8 +87,8 @@ var Calculator = React.createClass({
           <div className="calc-functions">
             <div className="calc-button" onClick={this.clickFunc.bind(this, '*')}><span>×</span></div>
             <div className="calc-button" onClick={this.clickFunc.bind(this, '/')}><span>÷</span></div>
-            <div className="calc-button" onClick={this.resetInput}><span>C</span></div>
-            <div className="calc-button" onClick={this.reset}><span>AC</span></div>
+            <div className="calc-button danger" onClick={this.resetInput}><span>C</span></div>
+            <div className="calc-button danger" onClick={this.reset}><span>AC</span></div>
             <div className="calc-button" onClick={this.clickFunc.bind(this, '+')}><span>+</span></div>
             <div className="calc-button" onClick={this.clickFunc.bind(this, '-')}><span>-</span></div>
             <div className="calc-button calc-button-tall" onClick={this.clickFunc.bind(this, '=')}><span>=</span></div>
