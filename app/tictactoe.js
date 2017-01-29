@@ -99,7 +99,7 @@ var TicTacToe = React.createClass({
         </div>
         <div className="t3-span">
           <p>{this.state.over ? this.state.winner === 0 ? 'WIN' : this.state.winner === 1 ? 'LOSS' : 'TIE' : 'TIC TAC TOE'}</p>
-          {this.state.over ? <button onClick={this.reset}>Play Again?</button> : null}
+          {this.state.over ? <div className="t3-btn" onClick={this.reset}>Play Again?</div> : null}
         </div>
       </div>
     );

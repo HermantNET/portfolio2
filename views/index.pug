@@ -4,12 +4,14 @@ block content
   #content
     #content1.content
 
-      blockquote
+      img(src="/img/me.jpg", data-aos="fade", data-aos-delay="200")#me
+
+      blockquote(data-aos="fade-up", data-aos-delay="700")
         p A person who never made a mistake never tried anything new.
         small Albert Einstein
 
-      h2.text-section.title Biography
-      div.desc-large.grey
+      h2(data-aos="fade-up", data-aos-delay="700").text-section.title Biography
+      div(data-aos="fade-up", data-aos-delay="700").desc-large.grey
         h3 Thomas E. Herman Jr.
         p.
           Born and raised in the US state of Florida. From the beggining I've held a special interest in computers.
@@ -31,19 +33,19 @@ block content
       h2.text-section.title Languages
       div.languages
         div
-          div.desc
+          div(data-aos="flip-left", data-aos-delay="100").desc
             img.react(src="/img/c-sharp.png")
             h3 .NET
             p.
               As a certified 'Microsoft Technical Associate', I can leverage the powerful .NET ecosystem
               to build robust desktop and web applications.
-          div.desc
+          div(data-aos="flip-left", data-aos-delay="200").desc
             img.react(src="/img/js.png")
             h3 JavaScript
             p.
               Be it server or client side, JavaScript is there. Using this as powerful
               as it is versatile language, I will get it what you need done quickly and efficiently.
-          div.desc
+          div(data-aos="flip-left", data-aos-delay="300").desc
             img.react(src="/img/elixir.png")
             h3 Elixir
             p.
@@ -55,14 +57,14 @@ block content
       h1.title.dark Applications
       div.item
         #calculator
-        div.desc
+        div(data-aos="flip-left", data-aos-delay="100").desc
           h3.text-section Business
           p.
             Deceptively simple, incredibly powerful, and remarkably intuitive. From a complex management panel,
             to something as simple as a newsletter subscription form, let your users experience the power of the modern web.
       div.item.column
         #gallery
-        div.desc-large
+        div(data-aos="flip-left", data-aos-delay="100").desc-large
           h3.text-section Usability
           p.
             Let your users know you care by doing the heavy lifting for them.
@@ -70,12 +72,12 @@ block content
             devices. Just one highly reusable component to supplement your end user experience.
       div.item
         #t3
-        div.desc
+        div(data-aos="flip-left", data-aos-delay="100").desc
           h3.text-section Creative
           p.
             Don't let your users get bored. Bring some fun with both classic and novel games.
       div.item#built-with
-        div.desc-large
+        div(data-aos="fade" data-aos-duration="1000")
           img.react(src="/img/react.png")
           h3.center Built With React
           p.
@@ -83,14 +85,13 @@ block content
             The pros of developing applications with React are far too many to list here, but React's key features are that it's fast, powerful
             and provides a platform that enables a highly efficient development process.
 
-
     #content3.content
-        div
+        div(data-aos="flip-up")
           h2.text-section.dark Email
           p.desc thomas@tehjr.com
-        div
+        div(data-aos="flip-up")
           h2.text-section.dark Phone
           p.desc +1 (941) 321-3860
-        div
+        div(data-aos="flip-up")
           h2.text-section.dark Skype
           p.desc hermant.edu@gmail.com

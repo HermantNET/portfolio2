@@ -1,3 +1,9 @@
+@import "colors";
+
+.t3 {
+  height: 14rem;
+}
+
 .t3-span {
   text-align: center;
 }
@@ -7,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-content: center;
   width: 12rem;
 }
 
@@ -19,9 +26,16 @@
 }
 
 .t3-board>.t3-blue {
-  background-color: blue;
+  background-color: $claret;
 }
 
 .t3-board>.t3-red {
-  background-color: red;
+  background-color: $jet;
+}
+
+.t3-btn {
+  border-radius: 2%;
+  padding: 0.5rem;
+  background-color: $jet;
+  color: white;
 }

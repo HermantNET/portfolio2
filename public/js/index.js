@@ -76,6 +76,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	AOS.init();
+
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
@@ -578,8 +580,8 @@
 	          this.state.over ? this.state.winner === 0 ? 'WIN' : this.state.winner === 1 ? 'LOSS' : 'TIE' : 'TIC TAC TOE'
 	        ),
 	        this.state.over ? React.createElement(
-	          "button",
-	          { onClick: this.reset },
+	          "div",
+	          { className: "t3-btn", onClick: this.reset },
 	          "Play Again?"
 	        ) : null
 	      )
@@ -624,7 +626,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: 'Raleway', sans-serif;\n  font-size: 1rem;\n  background-color: white; }\n\nbody {\n  padding: 0;\n  margin: 0; }\n\nblockquote {\n  background-color: #E0E0E2;\n  padding: 1rem;\n  box-shadow: 0.2rem 0.2rem 0.4rem grey; }\n  blockquote > small {\n    display: block;\n    text-align: right; }\n\n.title {\n  text-align: center;\n  font-family: 'Bungee', cursive;\n  margin: 0;\n  padding: 1rem; }\n\n.dark {\n  background-color: #CE5374;\n  color: #800B2E; }\n\n/* Blocks */\n#heading > .title {\n  font-size: 3rem; }\n\n#nav {\n  display: inline-flex;\n  justify-content: space-around;\n  width: 15rem; }\n\n#content1 {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  #content1 > p {\n    max-width: 50rem; }\n\n#content2 {\n  background-color: #CE5374;\n  display: flex;\n  flex-direction: column; }\n\n#content3 {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n\n#content3 > div {\n  padding: 2rem;\n  padding-top: 5rem;\n  text-align: center; }\n\n#footer {\n  margin-top: 5rem;\n  text-align: center;\n  font-size: 0.8rem;\n  padding: 1rem 2rem; }\n\n/* images */\n.react {\n  display: block;\n  margin: 0 auto;\n  max-width: 16rem; }\n\n.img {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 5rem 0;\n  background-size: cover;\n  height: 15rem;\n  box-shadow: 0.7rem 0.7rem 1rem rgba(0, 0, 0, 0.4) inset; }\n\n/* misc */\n#built-with {\n  margin-bottom: 0;\n  background-color: #353238;\n  color: white; }\n  #built-with div {\n    background-color: #353238; }\n    #built-with div h3 {\n      margin-top: 2rem; }\n\n.split {\n  margin: 0 auto;\n  max-width: 20rem;\n  display: flex;\n  justify-content: space-around; }\n\n.text-section {\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 700;\n  display: inline;\n  padding: 0.6rem; }\n\n.languages {\n  width: 100%;\n  background-color: #353238; }\n  .languages > div {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center; }\n    .languages > div h3 {\n      text-align: center;\n      margin-top: 2rem; }\n\n.center {\n  text-align: center; }\n\n#hamburger {\n  width: 2.5rem;\n  height: 3rem;\n  display: inline-block;\n  font-size: 2.5rem;\n  background-color: rgba(255, 255, 255, 0.2);\n  padding: 0 0.5rem;\n  border-radius: 0.5rem; }\n\n#hamburger > span {\n  display: block;\n  transform: scaleX(1.7); }\n\n.column {\n  flex-direction: column; }\n\n.item {\n  margin: 3rem 0;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center; }\n\n.desc {\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 20rem; }\n\n.desc-large {\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 40rem; }\n\n.grey {\n  padding: 0 2rem;\n  padding-bottom: 2rem;\n  background-color: #E0E0E2;\n  margin-bottom: 2rem; }\n\n@media (min-width: 768px) {\n  .grey {\n    border-radius: 1%; } }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: 'Raleway', sans-serif;\n  font-size: 1rem;\n  background-color: white; }\n\nbody {\n  padding: 0;\n  margin: 0; }\n\nblockquote {\n  background-color: #E0E0E2;\n  padding: 1rem;\n  box-shadow: 0.2rem 0.2rem 0.4rem grey; }\n  blockquote > small {\n    display: block;\n    text-align: right; }\n\n.title {\n  text-align: center;\n  font-family: 'Bungee', cursive;\n  margin: 0;\n  padding: 1rem; }\n\n.dark {\n  background-color: #CE5374;\n  color: #800B2E; }\n\n/* Blocks */\n#heading > .title {\n  font-size: 3rem; }\n\n#content1 {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  #content1 > p {\n    max-width: 50rem; }\n\n#content2 {\n  background-color: #CE5374;\n  display: flex;\n  flex-direction: column; }\n\n#content3 {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n\n#content3 > div {\n  padding: 2rem;\n  padding-top: 5rem;\n  text-align: center; }\n\n#footer {\n  margin-top: 5rem;\n  text-align: center;\n  font-size: 0.8rem;\n  padding: 1rem 2rem; }\n\n/* images */\n#me {\n  margin: 2rem;\n  border-radius: 50%;\n  width: 20rem;\n  box-shadow: 0.2rem 0.2rem 0 #CE5374, 0.4rem 0.4rem 0 #800B2E; }\n\n.react {\n  display: block;\n  margin: 0 auto;\n  max-width: 16rem; }\n\n.img {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 5rem 0;\n  background-size: cover;\n  height: 15rem;\n  box-shadow: 0.7rem 0.7rem 1rem rgba(0, 0, 0, 0.4) inset; }\n\n/* misc */\n#built-with {\n  margin-bottom: 0;\n  background-color: #353238;\n  color: white; }\n  #built-with div {\n    background-color: #353238;\n    max-width: 40rem;\n    padding: 2rem 1rem;\n    margin: 1rem 1rem; }\n    #built-with div h3 {\n      margin-top: 2rem; }\n\n.split {\n  margin: 0 auto;\n  max-width: 20rem;\n  display: flex;\n  justify-content: space-around; }\n\n.text-section {\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 700;\n  display: inline;\n  padding: 0.6rem; }\n\n.languages {\n  width: 100%;\n  background-color: #353238; }\n  .languages > div {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center; }\n    .languages > div h3 {\n      text-align: center;\n      margin-top: 2rem; }\n\n.center {\n  text-align: center; }\n\n#hamburger {\n  width: 2.5rem;\n  height: 3rem;\n  display: inline-block;\n  font-size: 2.5rem;\n  background-color: rgba(255, 255, 255, 0.2);\n  padding: 0 0.5rem;\n  border-radius: 0.5rem; }\n\n#hamburger > span {\n  display: block;\n  transform: scaleX(1.7); }\n\n.column {\n  flex-direction: column; }\n\n.item {\n  margin: 3rem 0;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center; }\n\n.desc {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 20rem; }\n\n.desc-large {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 40rem; }\n\n.grey {\n  padding: 0 2rem;\n  padding-bottom: 2rem;\n  background-color: #E0E0E2;\n  margin-bottom: 2rem; }\n\n@media (min-width: 768px) {\n  .grey {\n    border-radius: 1%; } }\n", ""]);
 
 	// exports
 
@@ -1012,7 +1014,7 @@
 
 
 	// module
-	exports.push([module.id, ".gallery {\n  max-width: 50rem;\n  background-color: rgba(0, 0, 0, 0.3);\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-content: flex-start; }\n\n.gallery > div > p {\n  text-align: center; }\n\n.gallery > div {\n  margin: 0.5rem; }\n\n.gallery > div > .gal-display {\n  width: 100%; }\n\n.gallery > div > .gal-thumb {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  max-height: 10rem; }\n\n.gal-span {\n  text-align: center;\n  width: 100%; }\n", ""]);
+	exports.push([module.id, ".gallery {\n  border-radius: 1%;\n  max-width: 50rem;\n  background-color: rgba(0, 0, 0, 0.3);\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-content: flex-start; }\n\n.gallery > div > p {\n  text-align: center; }\n\n.gallery > div {\n  margin: 0.5rem; }\n\n.gallery > div > .gal-display {\n  width: 100%; }\n\n.gallery > div > .gal-thumb {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  max-height: 10rem; }\n\n.gal-span {\n  text-align: center;\n  width: 100%; }\n", ""]);
 
 	// exports
 
@@ -1052,7 +1054,7 @@
 
 
 	// module
-	exports.push([module.id, ".t3-span {\n  text-align: center; }\n\n.t3-board {\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  width: 12rem; }\n\n.t3-board > div {\n  border-radius: 4%;\n  height: 3rem;\n  width: 3rem;\n  margin: 0.2rem;\n  background-color: white; }\n\n.t3-board > .t3-blue {\n  background-color: blue; }\n\n.t3-board > .t3-red {\n  background-color: red; }\n", ""]);
+	exports.push([module.id, ".t3 {\n  height: 14rem; }\n\n.t3-span {\n  text-align: center; }\n\n.t3-board {\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: center;\n  width: 12rem; }\n\n.t3-board > div {\n  border-radius: 4%;\n  height: 3rem;\n  width: 3rem;\n  margin: 0.2rem;\n  background-color: white; }\n\n.t3-board > .t3-blue {\n  background-color: #800B2E; }\n\n.t3-board > .t3-red {\n  background-color: #353238; }\n\n.t3-btn {\n  border-radius: 2%;\n  padding: 0.5rem;\n  background-color: #353238;\n  color: white; }\n", ""]);
 
 	// exports
 
