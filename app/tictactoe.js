@@ -33,6 +33,8 @@ var TicTacToe = React.createClass({
       return board[1][1];
     } else if (board[2][0] === board[1][1] && board[1][1] === board[0][2]) {
       return board[1][1];
+    } else if( board.every( (row) => row.every((pc) => pc > -1) ) ) {
+      return 2;
     } else {
       return -1;
     }
@@ -96,7 +98,7 @@ var TicTacToe = React.createClass({
           })}
         </div>
         <div className="t3-span">
-          <p>{this.state.over ? this.state.winner === 0 ? 'WIN' : 'LOSS' : 'TIC TAC TOE'}</p>
+          <p>{this.state.over ? this.state.winner === 0 ? 'WIN' : this.state.winner === 1 ? 'LOSS' : 'TIE' : 'TIC TAC TOE'}</p>
           {this.state.over ? <button onClick={this.reset}>Play Again?</button> : null}
         </div>
       </div>
