@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee|Raleway|Press+Start+2P');
+@import "colors";
 
 html {
   font-family: 'Raleway', sans-serif;
@@ -25,9 +25,9 @@ body {
   padding: 0 2rem;
 }
 
-.dark {
-  background-color: rgba(0,0,0,0.9);
-  color: white;
+.section-blue {
+  background-color: $blue;
+  color: $white;
 }
 
 /* Blocks */
