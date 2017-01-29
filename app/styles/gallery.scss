@@ -1,11 +1,10 @@
 .gallery {
   max-width: 50rem;
-  background-color: grey;
+  background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  margin-bottom: 2rem;
 }
 
 .gallery>div>p {

@@ -2,12 +2,13 @@ extends layouts/default.pug
 
 block content
   #content
-
-    #imagine.img
-      h2.title Who
-
     #content1.content
-      h2.text-section Biography
+
+      blockquote
+        p A person who never made a mistake never tried anything new.
+        small Albert Einstein
+
+      h2.text-section.title Biography
       div.desc-large.grey
         h3 Thomas E. Herman Jr.
         p.
@@ -27,34 +28,31 @@ block content
           a(href="https://www.codewars.com/users/HermantNET/completed_solutions") Code Wars
           a(href="http://codepen.io/hermantnet/") Codepen
 
-      h2.text-section Languages
+      h2.text-section.title Languages
       div.languages
-        div.desc
-          img.react(src="/img/c-sharp.png")
-          h3 .NET
-          p.
-            As a certified 'Microsoft Technical Associate', I can leverage the powerful .NET ecosystem
-            to build robust desktop and web applications.
-        div.desc
-          img.react(src="/img/js.png")
-          h3 JavaScript
-          p.
-            Be it server or client side, JavaScript is there. Using this as powerful
-            as it is versatile language, I will get it what you need done quickly and efficiently.
-        div.desc
-          img.react(src="/img/elixir.png")
-          h3 Elixir
-          p.
-            Built on the tried and tested Erlang VM, Elixir writing scalable, concurrent applications dead simple.
-            Ideal for complex web apps with many simultaneus connections.
-      blockquote
-        p A person who never made a mistake never tried anything new.
-        small Albert Einstein
+        div
+          div.desc
+            img.react(src="/img/c-sharp.png")
+            h3 .NET
+            p.
+              As a certified 'Microsoft Technical Associate', I can leverage the powerful .NET ecosystem
+              to build robust desktop and web applications.
+          div.desc
+            img.react(src="/img/js.png")
+            h3 JavaScript
+            p.
+              Be it server or client side, JavaScript is there. Using this as powerful
+              as it is versatile language, I will get it what you need done quickly and efficiently.
+          div.desc
+            img.react(src="/img/elixir.png")
+            h3 Elixir
+            p.
+              Built on the tried and tested Erlang VM, Elixir writing scalable, concurrent applications dead simple.
+              Ideal for complex web apps with many simultaneus connections.
 
-    #build.img
-      h2.title What
 
     #content2.content
+      h1.title.dark Applications
       div.item
         #calculator
         div.desc
@@ -62,7 +60,6 @@ block content
           p.
             Deceptively simple, incredibly powerful, and remarkably intuitive. From a complex management panel,
             to something as simple as a newsletter subscription form, let your users experience the power of the modern web.
-      hr.hr-break
       div.item.column
         #gallery
         div.desc-large
@@ -71,15 +68,13 @@ block content
             Let your users know you care by doing the heavy lifting for them.
             With the advantage of responsive design, no more trying to fit something onto the screen. No more multiple versions of the same application for different
             devices. Just one highly reusable component to supplement your end user experience.
-      hr.hr-break
       div.item
         #t3
         div.desc
           h3.text-section Creative
           p.
             Don't let your users get bored. Bring some fun with both classic and novel games.
-      hr.hr-break
-      div.item
+      div.item#built-with
         div.desc-large
           img.react(src="/img/react.png")
           h3.center Built With React
@@ -88,16 +83,14 @@ block content
             The pros of developing applications with React are far too many to list here, but React's key features are that it's fast, powerful
             and provides a platform that enables a highly efficient development process.
 
-    #profit.img
-      h2.title Contact
 
     #content3.content
         div
-          h2.text-section Email
-          p thomas@tehjr.com
+          h2.text-section.dark Email
+          p.desc thomas@tehjr.com
         div
-          h2.text-section Phone
-          p +1 (941) 321-3860
+          h2.text-section.dark Phone
+          p.desc +1 (941) 321-3860
         div
-          h2.text-section Skype
-          p hermant.edu@gmail.com
+          h2.text-section.dark Skype
+          p.desc hermant.edu@gmail.com
