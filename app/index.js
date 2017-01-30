@@ -7,4 +7,6 @@ import css_calculator from './styles/calculator.scss';
 import css_gallery from './styles/gallery.scss';
 import css_t3 from './styles/t3.scss';
 
-AOS.init();
+AOS.init({
+  offset: 300
+});
