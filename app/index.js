@@ -10,6 +10,6 @@ import css_t3 from './styles/t3.scss';
 
 ready( function() {
   AOS.init({
-    offset: 300
+    offset: 200
   });
 });
