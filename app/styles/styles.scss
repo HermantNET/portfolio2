@@ -12,9 +12,11 @@ body {
 }
 
 blockquote {
+  display: inline-block;
   background-color: $platinum;
   padding: 1rem;
   box-shadow: 0.2rem 0.2rem 0.4rem grey;
+  max-width: 50rem;
 
   >small {
     display: block;
@@ -41,18 +43,18 @@ blockquote {
 
 /* Blocks */
 
-#heading>.title {
-  font-size: 3rem;
+#content0 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #content1 {
+  background-color: $ruber;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  >p {
-    max-width: 50rem;
-  }
 }
 
 #content2 {
@@ -85,7 +87,7 @@ blockquote {
 /* images */
 
 #me {
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   border-radius: 50%;
   max-width: 18rem;
   box-shadow: 0.2rem 0.2rem 0 $ruber, 0.4rem 0.4rem 0 $claret;
@@ -215,5 +217,11 @@ blockquote {
 @media (min-width: 768px) {
   .grey {
     border-radius: 1%;
+  }
+
+  @media (min-height: 680px) {
+    #content0 {
+      height: 100vh;
+    }
   }
 }

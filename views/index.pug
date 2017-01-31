@@ -2,17 +2,23 @@ extends layouts/default.pug
 
 block content
   #content
+
+    #content0.content
+      #ui.device
+      blockquote(data-aos="fade-up")
+        p As far as the customer is concerned, the interface is the product.
+        small Jef Raskin
+
     #content1.content
+      h1(data-aos="fade").title.dark About Me
+      img(src="/img/me.jpg", data-aos="fade")#me
 
-      img(src="/img/me.jpg", data-aos="fade", data-aos-delay="200")#me
+      blockquote(data-aos="fade-up")
+        p Something something Steve Jobs.
+        small Thomas Herman
 
-      blockquote(data-aos="fade-up", data-aos-delay="700")
-        p A person who never made a mistake never tried anything new.
-        small Albert Einstein
-
-      h2(data-aos="fade-up", data-aos-delay="700").text-section.title Biography
-      div(data-aos="fade-up", data-aos-delay="700" data-aos-offset).desc-large.grey
-        h3 Thomas E. Herman Jr.
+      div(data-aos="fade-up").desc-large.grey
+        h2 Thomas E. Herman Jr.
         p.
           Born and raised in the US state of Florida. From the beggining I've held a special interest in computers.
           This naturally lead to looking for work in the tech industry. When I discovered programming, I quickly fell
@@ -30,7 +36,7 @@ block content
           a(href="https://www.codewars.com/users/HermantNET/completed_solutions") Code Wars
           a(href="http://codepen.io/hermantnet/") Codepen
 
-      h2.text-section.title Languages
+      h1.title.dark Languages
       div.languages
         div
           div(data-aos="flip-left", data-aos-delay="100").desc

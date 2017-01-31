@@ -1,12 +1,14 @@
 // dependencies
+var compression = require('compression');
 const express = require('express');
-const app = express();
 const pug = require('pug');
 const routes = require('./routes');
+const app = express();
 // *-------------------------------------------------------------------------*
 
 // config
 const port = 80;
+app.use(compression());
 app.use(express.static('public'));
 // *-------------------------------------------------------------------------*
 

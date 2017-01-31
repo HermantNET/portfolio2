@@ -58,31 +58,47 @@
 
 	var _tictactoe2 = _interopRequireDefault(_tictactoe);
 
-	var _docReady = __webpack_require__(4);
+	var _device = __webpack_require__(4);
+
+	var _device2 = _interopRequireDefault(_device);
+
+	var _ui = __webpack_require__(6);
+
+	var _ui2 = _interopRequireDefault(_ui);
+
+	var _docReady = __webpack_require__(7);
 
 	var _docReady2 = _interopRequireDefault(_docReady);
 
-	var _styles = __webpack_require__(6);
+	var _styles = __webpack_require__(9);
 
 	var _styles2 = _interopRequireDefault(_styles);
 
-	var _calculator3 = __webpack_require__(10);
+	var _calculator3 = __webpack_require__(13);
 
 	var _calculator4 = _interopRequireDefault(_calculator3);
 
-	var _gallery3 = __webpack_require__(12);
+	var _gallery3 = __webpack_require__(15);
 
 	var _gallery4 = _interopRequireDefault(_gallery3);
 
-	var _t = __webpack_require__(14);
+	var _t = __webpack_require__(17);
 
 	var _t2 = _interopRequireDefault(_t);
+
+	var _device3 = __webpack_require__(19);
+
+	var _device4 = _interopRequireDefault(_device3);
+
+	var _ui3 = __webpack_require__(21);
+
+	var _ui4 = _interopRequireDefault(_ui3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _docReady2.default)(function () {
 	  AOS.init({
-	    offset: 200
+	    offset: 140
 	  });
 	});
 
@@ -603,6 +619,110 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// Add class .device to whatever div targetted by main react component to get dynamic sizing.
+	var Screen = function (_Component) {
+	  _inherits(Screen, _Component);
+
+	  function Screen(props) {
+	    _classCallCheck(this, Screen);
+
+	    return _possibleConstructorReturn(this, (Screen.__proto__ || Object.getPrototypeOf(Screen)).call(this, props));
+	  }
+
+	  _createClass(Screen, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "device-body" },
+	        React.createElement(
+	          "div",
+	          { className: "device-content" },
+	          this.props.children
+	        ),
+	        React.createElement("div", { className: "device-home" })
+	      );
+	    }
+	  }]);
+
+	  return Screen;
+	}(_react.Component);
+
+	module.exports = Screen;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = React;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _device = __webpack_require__(4);
+
+	var _device2 = _interopRequireDefault(_device);
+
+	var _home = __webpack_require__(24);
+
+	var _home2 = _interopRequireDefault(_home);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ui = function (_Component) {
+	  _inherits(Ui, _Component);
+
+	  function Ui(props) {
+	    _classCallCheck(this, Ui);
+
+	    return _possibleConstructorReturn(this, (Ui.__proto__ || Object.getPrototypeOf(Ui)).call(this, props));
+	  }
+
+	  _createClass(Ui, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        _device2.default,
+	        null,
+	        React.createElement(_home2.default, null)
+	      );
+	    }
+	  }]);
+
+	  return Ui;
+	}(_react.Component);
+
+	ReactDOM.render(React.createElement(Ui, null), document.getElementById('ui'));
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	 * docReady v1.0.4
 	 * Cross browser DOMContentLoaded event emitter
@@ -674,7 +794,7 @@
 	// transport
 	if ( true ) {
 	  // AMD
-	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(5) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (defineDocReady), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(8) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (defineDocReady), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else if ( typeof exports === 'object' ) {
 	  module.exports = defineDocReady( require('eventie') );
 	} else {
@@ -686,7 +806,7 @@
 
 
 /***/ },
-/* 5 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -774,16 +894,16 @@
 
 
 /***/ },
-/* 6 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(7);
+	var content = __webpack_require__(10);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
+	var update = __webpack_require__(12)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -800,21 +920,21 @@
 	}
 
 /***/ },
-/* 7 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)();
+	exports = module.exports = __webpack_require__(11)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: 'Raleway', sans-serif;\n  font-size: 1rem;\n  background-color: white; }\n\nbody {\n  padding: 0;\n  margin: 0; }\n\nblockquote {\n  background-color: #E0E0E2;\n  padding: 1rem;\n  box-shadow: 0.2rem 0.2rem 0.4rem grey; }\n  blockquote > small {\n    display: block;\n    text-align: right; }\n\n#content {\n  width: 100%;\n  overflow: hidden; }\n\n.title {\n  text-align: center;\n  font-family: 'Bungee', cursive;\n  margin: 0;\n  padding: 1rem; }\n\n.dark {\n  background-color: #CE5374;\n  color: #800B2E; }\n\n/* Blocks */\n#heading > .title {\n  font-size: 3rem; }\n\n#content1 {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  #content1 > p {\n    max-width: 50rem; }\n\n#content2 {\n  background-color: #CE5374;\n  display: flex;\n  flex-direction: column; }\n\n#content3 {\n  width: 95%;\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  #content3 > div {\n    padding: 2rem;\n    padding-top: 5rem;\n    text-align: center; }\n\n#footer {\n  margin-top: 5rem;\n  text-align: center;\n  font-size: 0.8rem;\n  padding: 1rem 2rem; }\n\n/* images */\n#me {\n  margin: 2rem 0;\n  border-radius: 50%;\n  max-width: 18rem;\n  box-shadow: 0.2rem 0.2rem 0 #CE5374, 0.4rem 0.4rem 0 #800B2E; }\n\n.react {\n  display: block;\n  margin: 0 auto;\n  max-width: 16rem; }\n\n.img {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 5rem 0;\n  background-size: cover;\n  height: 15rem;\n  box-shadow: 0.7rem 0.7rem 1rem rgba(0, 0, 0, 0.4) inset; }\n\n/* misc */\n#built-with {\n  margin-bottom: 0;\n  background-color: #353238;\n  color: white; }\n  #built-with div {\n    background-color: #353238;\n    max-width: 40rem;\n    padding: 2rem 1rem;\n    margin: 1rem 1rem; }\n    #built-with div h3 {\n      margin-top: 2rem; }\n\n.split {\n  margin: 0 auto;\n  max-width: 20rem;\n  display: flex;\n  justify-content: space-around; }\n\n.text-section {\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 700;\n  display: inline;\n  padding: 0.6rem; }\n\n.languages {\n  width: 100%;\n  background-color: #353238; }\n  .languages > div {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center; }\n    .languages > div h3 {\n      text-align: center;\n      margin-top: 2rem; }\n\n.center {\n  text-align: center; }\n\n#hamburger {\n  width: 2.5rem;\n  height: 3rem;\n  display: inline-block;\n  font-size: 2.5rem;\n  background-color: rgba(255, 255, 255, 0.2);\n  padding: 0 0.5rem;\n  border-radius: 0.5rem; }\n\n#hamburger > span {\n  display: block;\n  transform: scaleX(1.7); }\n\n.column {\n  flex-direction: column; }\n\n.item {\n  margin: 3rem 0;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center; }\n\n.desc {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 20rem; }\n\n.desc-large {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 40rem; }\n\n.grey {\n  padding: 0 2rem;\n  padding-bottom: 2rem;\n  background-color: #E0E0E2;\n  margin-bottom: 2rem; }\n\n@media (min-width: 768px) {\n  .grey {\n    border-radius: 1%; } }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: 'Raleway', sans-serif;\n  font-size: 1rem;\n  background-color: white; }\n\nbody {\n  padding: 0;\n  margin: 0; }\n\nblockquote {\n  display: inline-block;\n  background-color: #E0E0E2;\n  padding: 1rem;\n  box-shadow: 0.2rem 0.2rem 0.4rem grey;\n  max-width: 50rem; }\n  blockquote > small {\n    display: block;\n    text-align: right; }\n\n#content {\n  width: 100%;\n  overflow: hidden; }\n\n.title {\n  text-align: center;\n  font-family: 'Bungee', cursive;\n  margin: 0;\n  padding: 1rem; }\n\n.dark {\n  background-color: #CE5374;\n  color: #800B2E; }\n\n/* Blocks */\n#content0 {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; }\n\n#content1 {\n  background-color: #CE5374;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n#content2 {\n  background-color: #CE5374;\n  display: flex;\n  flex-direction: column; }\n\n#content3 {\n  width: 95%;\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  #content3 > div {\n    padding: 2rem;\n    padding-top: 5rem;\n    text-align: center; }\n\n#footer {\n  margin-top: 5rem;\n  text-align: center;\n  font-size: 0.8rem;\n  padding: 1rem 2rem; }\n\n/* images */\n#me {\n  margin-bottom: 2rem;\n  border-radius: 50%;\n  max-width: 18rem;\n  box-shadow: 0.2rem 0.2rem 0 #CE5374, 0.4rem 0.4rem 0 #800B2E; }\n\n.react {\n  display: block;\n  margin: 0 auto;\n  max-width: 16rem; }\n\n.img {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 5rem 0;\n  background-size: cover;\n  height: 15rem;\n  box-shadow: 0.7rem 0.7rem 1rem rgba(0, 0, 0, 0.4) inset; }\n\n/* misc */\n#built-with {\n  margin-bottom: 0;\n  background-color: #353238;\n  color: white; }\n  #built-with div {\n    background-color: #353238;\n    max-width: 40rem;\n    padding: 2rem 1rem;\n    margin: 1rem 1rem; }\n    #built-with div h3 {\n      margin-top: 2rem; }\n\n.split {\n  margin: 0 auto;\n  max-width: 20rem;\n  display: flex;\n  justify-content: space-around; }\n\n.text-section {\n  color: rgba(0, 0, 0, 0.6);\n  font-weight: 700;\n  display: inline;\n  padding: 0.6rem; }\n\n.languages {\n  width: 100%;\n  background-color: #353238; }\n  .languages > div {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center; }\n    .languages > div h3 {\n      text-align: center;\n      margin-top: 2rem; }\n\n.center {\n  text-align: center; }\n\n#hamburger {\n  width: 2.5rem;\n  height: 3rem;\n  display: inline-block;\n  font-size: 2.5rem;\n  background-color: rgba(255, 255, 255, 0.2);\n  padding: 0 0.5rem;\n  border-radius: 0.5rem; }\n\n#hamburger > span {\n  display: block;\n  transform: scaleX(1.7); }\n\n.column {\n  flex-direction: column; }\n\n.item {\n  margin: 3rem 0;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center; }\n\n.desc {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 20rem; }\n\n.desc-large {\n  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);\n  border-radius: 2%;\n  padding: 2rem 1rem;\n  margin: 1rem 1rem;\n  background-color: #E0E0E2;\n  max-width: 40rem; }\n\n.grey {\n  padding: 0 2rem;\n  padding-bottom: 2rem;\n  background-color: #E0E0E2;\n  margin-bottom: 2rem; }\n\n@media (min-width: 768px) {\n  .grey {\n    border-radius: 1%; } }\n\n@media (min-width: 768px) and (min-height: 680px) {\n  #content0 {\n    height: 100vh; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/*
@@ -870,7 +990,7 @@
 
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -1122,16 +1242,16 @@
 
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(11);
+	var content = __webpack_require__(14);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
+	var update = __webpack_require__(12)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1148,10 +1268,10 @@
 	}
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)();
+	exports = module.exports = __webpack_require__(11)();
 	// imports
 
 
@@ -1162,16 +1282,16 @@
 
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(16);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
+	var update = __webpack_require__(12)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1188,10 +1308,10 @@
 	}
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)();
+	exports = module.exports = __webpack_require__(11)();
 	// imports
 
 
@@ -1202,16 +1322,16 @@
 
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(15);
+	var content = __webpack_require__(18);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
+	var update = __webpack_require__(12)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1228,10 +1348,10 @@
 	}
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)();
+	exports = module.exports = __webpack_require__(11)();
 	// imports
 
 
@@ -1240,6 +1360,130 @@
 
 	// exports
 
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(20);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./device.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./device.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(11)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".device {\n  margin-left: -0.4rem;\n  width: 90%;\n  display: flex;\n  justify-content: center; }\n\n.device-body {\n  flex: 1;\n  min-width: 18rem;\n  max-width: 50rem;\n  height: 32rem;\n  border-radius: 4%;\n  box-shadow: 0.3rem 0.3rem black, 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.4);\n  margin: 2rem 0;\n  padding: 0.5rem;\n  padding-top: 2rem;\n  background-color: #353238;\n  height: 30rem; }\n\n.device-content {\n  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4) inset;\n  border-radius: 1%;\n  margin: 0 auto;\n  background-color: white;\n  width: 95%;\n  height: 86%; }\n\n.device-home {\n  background-color: #E0E0E2;\n  width: 3rem;\n  height: 3rem;\n  border-radius: 50%;\n  margin: 0.8rem auto 0.5rem auto; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(22);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./ui.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./ui.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(11)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 23 */,
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Home = function Home() {
+	  return _react2.default.createElement(
+	    "div",
+	    { style: styles.center },
+	    _react2.default.createElement(
+	      "h1",
+	      null,
+	      "TEHJR"
+	    ),
+	    _react2.default.createElement(
+	      "h3",
+	      null,
+	      "Login"
+	    ),
+	    _react2.default.createElement("input", { placeholder: "Username", type: "text" }),
+	    _react2.default.createElement("input", { placeholder: "Password", type: "password" })
+	  );
+	};
+
+	var styles = {
+	  center: {
+	    height: '100%',
+	    display: 'flex',
+	    flexDirection: 'column',
+	    justifyContent: 'center',
+	    alignItems: 'center'
+	  }
+	};
+
+	module.exports = Home;
 
 /***/ }
 /******/ ]);

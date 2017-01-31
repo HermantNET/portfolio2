@@ -4,6 +4,9 @@ var webpack = require('webpack');
 module.exports = {
   entry: './app/index.js',
   output: { path: `${__dirname}/public/js`, filename: 'index.js' },
+  externals: {
+    "react": "React"
+  },
   module: {
     loaders: [
       {

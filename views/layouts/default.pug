@@ -3,12 +3,11 @@ html
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="Cache-Control", content="max-age=7200")
     title TEHJR
     link(href="https://fonts.googleapis.com/css?family=Bungee|Raleway:400, 700|Press+Start+2P", rel="stylesheet")
     link(href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css", rel="stylesheet")
   body
-    #heading.dark
-      h1.title TEHJR
 
     block content
 
@@ -17,7 +16,7 @@ html
       p © #{year} TEHJR - Thomas E. Herman Jr.
 
     block scripts
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js", type="text/javascript")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js", type="text/javascript")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js", type="text/javascript")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js", type="text/javascript")
     script(src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js")
     script(src="/js/index.js", type="text/javascript")
