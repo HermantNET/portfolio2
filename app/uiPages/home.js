@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <div style={styles.center}>
       <h1>TEHJR</h1>
+      <small>UNDER CONSTRUCTION</small>
       <h3>Login</h3>
       <input placeholder="Username" type="text" />
       <input placeholder="Password" type="password" />
